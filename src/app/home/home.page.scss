@@ -1,27 +1,63 @@
-#container {
-  text-align: center;
+// Variables
+$primary-color: #007bff; // Azul
+$danger-color: #dc3545;  // Rojo
+$success-color: #28a745; // Verde
+$font-size-small: 0.875rem;
+$border-radius: 5px;
 
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
+// Estilos generales
+.loveBox {
+  form {
+    .form-label {
+      font-weight: bold;
+
+      &.text-danger {
+        color: $danger-color;
+      }
+      &.text-success {
+        color: $success-color;
+      }
+    }
+
+    .form-control {
+      border-radius: $border-radius;
+      transition: border-color 0.3s ease;
+
+      &.is-invalid {
+        border-color: $danger-color;
+      }
+      &.is-valid {
+        border-color: $success-color;
+      }
+    }
+
+    .c-4 {
+      margin-top: 0.5rem;
+
+      ion-text {
+        color: $danger-color;
+
+        h6 {
+          font-size: $font-size-small;
+          margin-top: -5px;
+        }
+      }
+    }
+  }
 }
 
-#container strong {
-  font-size: 20px;
-  line-height: 26px;
-}
+// Estilo del botón
+button {
+  background-color: $primary-color;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: $border-radius;
+  font-size: $font-size-small;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 
-#container p {
-  font-size: 16px;
-  line-height: 22px;
-
-  color: #8c8c8c;
-
-  margin: 0;
-}
-
-#container a {
-  text-decoration: none;
+  &:hover {
+    background-color: darken($primary-color, 10%);
+  }
 }
